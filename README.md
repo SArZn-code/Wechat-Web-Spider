@@ -1,9 +1,9 @@
 # Wechat-Web-Spider
-This repository record multiple-file Web crawlers to collect Wetchat Official Accounts info including likes and views for Ocean University of China Community.
-There are also some useful script like download edge browser agency automatically. 
+This repository record multiple-file Web crawlers to collect Wetchat Official Accounts info including likes and views for Ocean University of China Community.  
+There are also some useful script like download edge browser agency automatically.   
 
-language: Python & some Typescript
-Third-party Tools: Packet capture, Fiddler
+**Language**: Python & some Typescript  
+**Third-party Tools**: Packet capture, Fiddler  
 
 # Tree
 ```
