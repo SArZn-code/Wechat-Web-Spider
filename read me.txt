@@ -1,0 +1,65 @@
+请保持网络流畅
+
+执行须知:配置好fiddler抓包工具和微信代理端口,以及将fiddler证书装载到本地电脑上(可选:将证书加到浏览器中)
+	当然还有python编译器
+	//**注意**//
+	  新加功能: fiddler配置:
+		  Rules--> Customize Rules-->Edit-->Find(查找OnBeforeRequest)-->找到-->OnBeforeRequest后,再这个Class的里面最后写入如下代码
+	    //注意缩进--if要和原有的if同一缩进//
+	    //代码中的filename变量赋值给一个文件夹(这由你决定--建议改到web spider中,如要改到其它位置,需要在代码中修改一个路径,这里面将保存每一个符合模式的url,请重视)
+
+		if (oSession.HostnameIs("mp.weixin.qq.com") && oSession.uriContains("/mp/getappmsgext?")
+		){
+			var filename = "写你要保存的地址";
+			var curDate = new Date();
+			var sw: System.IO.StreamWriter;
+			if (System.IO.File.Exists(filename)){
+				sw = System.IO.File.AppendText(filename);
+				sw.Write(oSession.url + "\n");
+			}
+			else{
+				sw = System.IO.File.CreateText(filename);
+				sw.Write(oSession.url + "\n");
+			}
+			sw.Close();
+			sw.Dispose();
+		}		
+	//**注意**//
+
+	警告: 请确保采集任务在本周四-到下周三开展(正常的采集时间)否则会造成程序崩溃,难以维护!! (如果违反了,请将文件夹中的内容全部删除)
+	     请确保在第一个py执行完后再执行第二个程序!!!否则无法执行,难以维护.(如果违反了,请将文件夹中的内容全部删除)
+
+	所有文件的默认保存路径在桌面,本代码暂未选择路径选项
+
+
+执行必做:
+	第二个py执行时需要打开fiddler和PC端微信
+	(修改: fiddler中文件路径)
+	本代码暂有未创建功能:
+	   需要: 浏览器驱动!!!(edge浏览器), "创建一个微信公众号平台", Fiddler下载
+	   fiddler配置:
+             1. Tools -> Options -> HTTPS -> 如图所示
+                      2. 路径选择, 优化!
+	   文件: 数据_公众号and类别.json, 数据_公众号信息.json, 要存在
+	   fiddler中上方出现一个黄色的提示, 请一定要点击一下, 否则(可能)会抓不到信息
+
+输出分析: 
+	如果可以执行程序,终端可能有SSL证书警告,可略过
+	如果报错,大概率是一些有时效性的参数过期,或者是被暂时封了(等一会儿就好)
+
+
+最后你需要做的事情:
+    excel中拉长单元格
+
+不足:
+本代码逻辑强差人意,请谅解
+目前无法实现代码全自动化--请见谅--待我学习后优化代码(py2实时更新的key)
+确保每一个都打开并完整刷新,否则会导致程序崩溃--需要优化
+
+
+优化:
+对5个表进行选择, 使一台电脑可以爬取任何一个表而不改变json文件
+对代码进行封装
+本代码暂未选择路径选项
+py 2
+   无法破解key参数

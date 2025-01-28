@@ -1,0 +1,11 @@
+Cookie中的wip_sid2---时效性--在HTTP中找(目前没有用到)
+data表单
+mid aid(优化后的)文章id
+sn文章标记
+idx当天发了几篇文章
+uin微信身份证
+__biz公众号身份证
+pass_ticket请求票据
+appmsg_token非固定有过期策略的票据
+key
+fakeid:对应不同的公众号
