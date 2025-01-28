@@ -10,7 +10,6 @@ There are also some useful script like download edge browser agency automaticall
 │  agent.txt
 │  all_data.txt
 │  fiddler配置.png
-│  msedgedriver.exe
 │  py_2 need url.txt
 │  read me.txt
 │  一些参数.txt
@@ -18,7 +17,7 @@ There are also some useful script like download edge browser agency automaticall
 │  数据_公众号信息.json
 │  注意事项.txt
 │  采集时间.txt
-│
+│  修改过的Fiddler.zip
 ├─all of url   --> the temporary file for each essay url
 ├─mid_with_title  --> the temporary file for unique id of each essay with title 
 ├─Package file   --> reposit all script
@@ -43,3 +42,5 @@ all of the 2* file get info from Wechat Client via Fiddler
 - 1* file get info for Wechat Account Officials
 - Fiddler get info carried 1* output
 - 2* file get core result carried Fiddler output
+
+
